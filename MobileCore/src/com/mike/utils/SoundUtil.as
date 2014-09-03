@@ -31,7 +31,7 @@ package com.mike.utils
 			if (soundList[url] == undefined){
 				registerSound(url,callBack);
 			}
-			else if (soundList[url] != 1)
+			else if (soundList[url] != 1 && soundList[url].sound != null)
 				soundList[url].channel = soundList[url].sound.play(0);
 		}
 		
