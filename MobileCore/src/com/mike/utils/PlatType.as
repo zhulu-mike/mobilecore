@@ -24,6 +24,11 @@ package com.mike.utils
 		
 		public static const ANDROID_MARKET:int = 8;
 		
+		public static const ANDROID_ANZHI:int = 9;
+		
+		public static const QQ:int = 10;
+		
+		public static const SAMSUNG:int = 11;
 		
 	}
 }
