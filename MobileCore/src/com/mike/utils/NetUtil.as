@@ -19,6 +19,15 @@ package com.mike.utils
 		 */		
 		public static const HUOYUE_URL:String = "http://www.g6game.com/fkzs/interfaces/huoyuexin.php";
 		public static const PLAYTIME_URL:String = "http://www.g6game.com/fkzs/interfaces/playtime.php";
+		public static const GETDATA_URL:String = "http://www.g6game.com/fkzs/interfaces/getdata2.php";
+		
+		public static function getData(callback:Function):void
+		{
+			var data:URLVariables = new URLVariables();
+			data['plat'] = PlatUtil.currentPlat;
+			data['name'] = GameInfo.NAME;
+			sendData(GETDATA_URL,data,callback);
+		}
 		
 		/**
 		 * 发送用户每日登陆数据
@@ -55,7 +64,7 @@ package com.mike.utils
 			req.data = data;
 			loader.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
 			loader.addEventListener(HTTPStatusEvent.HTTP_STATUS, onHttpStatus);
-			loader.addEventListener(Event.COMPLETE, function():void{if (callBack != null) callBack();});
+			loader.addEventListener(Event.COMPLETE, function():void{if (callBack != null) callBack(loader.data);});
 			loader.load(req);
 		}
 		
