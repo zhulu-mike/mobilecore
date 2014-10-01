@@ -30,5 +30,9 @@ package com.mike.utils
 		
 		public static const SAMSUNG:int = 11;
 		
+		public static const JIFENG:int = 12;
+		
+		public static const ZHUSHOU91:int = 13;
+		
 	}
 }
